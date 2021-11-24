@@ -1,5 +1,44 @@
+//local storage
+/*let user={userName:"enessertaslan",isActive:true}
+console.log(user)
+localStorage.setItem('userInfo',JSON.stringify(user))
+let userInfo=localStorage.getItem('userInfo')
+userInfo=JSON.parse(userInfo)
+console.log(userInfo)
+*/
+//counter ekle çıkar işlemi
+let counter=localStorage.getItem('counter') ? Number(localStorage.getItem('counter')):0
+let counterDOM=document.querySelector('#counter')
+let increaseDOM=document.querySelector('#increase')
+let decreaseDOM=document.querySelector('#decrease')
+counterDOM.innerHTML=counter
+increaseDOM.addEventListener("click",clickEvent)
+decreaseDOM.addEventListener("click",clickEvent)
 
-let examGrade=prompt("Puani Giriniz:")
+function clickEvent(){
+   
+    this.id=="increase" ? counter+=1 : counter-=1
+    localStorage.setItem('counter',counter)
+    counterDOM.innerHTML=counter
+}
+
+/*const counter=document.querySelector("#counter")
+const increase=document.querySelector("#increase")
+increase.addEventListener("click",increaseNumber)
+let num=0
+function increaseNumber(){
+    num++
+    counter.innerHTML=`${num}`
+}
+const decrease=document.querySelector("#decrease")
+decrease.addEventListener("click",decraseNumber)
+function decraseNumber(){
+    num--
+    counter.innerHTML=`${num}`
+} //Benim yaptığım sürüm Yükselt azalt*/
+
+
+/*let examGrade=prompt("Puani Giriniz:")
 let textInfo
 if(examGrade>=0 && examGrade<=100){
 if(examGrade>=90){textInfo="AA"}
@@ -13,7 +52,7 @@ else if(examGrade>=50){textInfo="DD :)"}
 else if(examGrade>=0){textInfo="FF :("}
 }else{textInfo="Geçersiz Değer"}10
 alert(textInfo)
-10
+10*/
 /*let firstChild=document.querySelector("ul#list>li:first-child")
 firstChild.innerHTML="ilk öge değişti"
 let lastChild=document.querySelector("ul#list>li:last-child")
